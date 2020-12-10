@@ -9,7 +9,7 @@ services:
       - TOR_MaxCircuitDirtiness=1
       - TOR_NewCircuitPeriod=1
       - TOR_EnforceDistinctSubnets=1
-      - LOCATION=US
+      - LOCATION=DE
   app:
     build: .
     restart: unless-stopped
