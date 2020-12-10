@@ -1,0 +1,19 @@
+version: '3'
+services:
+  tor:
+    image: dperson/torproxy
+    restart: unless-stopped
+    # ports:
+    #   - 9050:9050
+    environment:
+      - TOR_MaxCircuitDirtiness=1
+      - TOR_NewCircuitPeriod=1
+      - TOR_EnforceDistinctSubnets=1
+      - LOCATION=US
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      - PORT=3000
+    ports:
+      - 3000:3000
